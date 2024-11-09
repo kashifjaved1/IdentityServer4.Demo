@@ -21,9 +21,9 @@ namespace Api.Extensions
                 x.AddPolicy(nameof(Permissions.Read),
                     policy => policy.RequireClaim("scope", Permissions.Read.ToFullString()));
                 x.AddPolicy(nameof(Permissions.Write),
-                    policy => policy.RequireClaim("scope", Permissions.Read.ToFullString()));
+                    policy => policy.RequireClaim("scope", Permissions.Write.ToFullString()));
                 x.AddPolicy(nameof(Permissions.Delete),
-                    policy => policy.RequireClaim("scope", Permissions.Read.ToFullString()));
+                    policy => policy.RequireClaim("scope", Permissions.Delete.ToFullString()));
             });
 
             services.AddControllers();
